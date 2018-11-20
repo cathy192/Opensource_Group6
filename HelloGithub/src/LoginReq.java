@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import UserInfo;
+
 
 public class LoginReq {
 
@@ -56,11 +56,11 @@ public class LoginReq {
 		ResultSet rs = null;
 		try {
 			conn = DriverManager.getConnection(url,id,pass);
-			String query = "select * from member2 where id = ?";
+			String query = "select* from member2 where id = ?";
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, usrid);
 			rs = pstmt.executeQuery();
-			if(rs) {
+			if(rs != null) {
 				if(usrpass.equals(rs.getString("pass")){
 					uifo.setName(rs.getString("name"));
 				}
