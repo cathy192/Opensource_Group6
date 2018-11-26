@@ -7,7 +7,7 @@ public class wordDTO {
 	int unit;
 	String word;
 	String mean;
-	boolean Wrong;
+	boolean wrong;
 	static String highlight = "";
 	
 	public String getHighlight() {
@@ -23,7 +23,7 @@ public class wordDTO {
 	public void setunit(int unit) {
 		this.unit = unit;
 	}
-	public String word() {
+	public String getword() {
 		return word;
 	}
 	public void setword(String word) {
@@ -36,10 +36,10 @@ public class wordDTO {
 		this.mean = mean;
 	}
 	public boolean Wrong() {
-		return Wrong;
+		return wrong;
 	}
 	public void setWrong(boolean wrong) {
-		this.Wrong=Wrong;
+		this.wrong=wrong;
 	}
 	
 }

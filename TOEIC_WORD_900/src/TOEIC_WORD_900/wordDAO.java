@@ -7,13 +7,17 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
 
 public class wordDAO {
 	public static File file;
 	public static FileReader filereader;
 	public static BufferedReader bufReader;
 	static final String id = "root";
-	static final String pass = "1234";
+	static final String pass = "ss99223!";
 	static String url = "jdbc:mysql://127.0.0.1:3306/java?serverTimezone=UTC";
 
 public wordDAO() {
@@ -27,7 +31,41 @@ public wordDAO() {
 		e.printStackTrace();
 	}
 }
-
+public static word_unit getUnit(int unit)  {
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	word_unit result=new word_unit(unit);
+	try {
+		conn = DriverManager.getConnection(url,id,pass);
+		String query = "select * from words";
+		pstmt = conn.prepareStatement(query);
+		rs = pstmt.executeQuery();
+		int cnt=0;
+		while(rs.next()) {
+			wordDTO dto = new wordDTO();
+			dto.setunit(rs.getInt("unit"));
+			if(dto.getunit()!=unit) {
+				break;
+			}
+			dto.setword(rs.getString("word"));
+			dto.setmean(rs.getString("mean"));
+			result.get_DTO(dto);
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}finally {
+		try {
+			if(rs != null) rs.close();
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	return result;
+}
 public static void insert(int unit,String word,String mean) {
 	Connection conn = null;
 	PreparedStatement pstmt = null;

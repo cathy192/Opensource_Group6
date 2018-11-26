@@ -35,48 +35,9 @@ public class word_study_1 extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	/*
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					word_study_1 frame = new word_study_1();
-					frame.setVisible(true);
-					file =new File("C:\\Users\\rkdal\\Desktop\\수업자료\\2-2\\오픈소스 개발프로젝트\\9Team Project\\단어암기장 900개단어.txt");
-					filereader = new FileReader(file);
-					bufReader = new BufferedReader(filereader);
-					
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				
-			}
-		});
-	}
-	*/
-	public String ReadNextword()  {
+	
+	
 		
-		String line= "";
-		
-		try {
-			line=bufReader.readLine();
-			if(line!=null) {
-				return line;
-					
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
-	
-	
-
-	
-	
 	public word_study_1() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 671, 427);
@@ -89,7 +50,7 @@ public class word_study_1 extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String line="";	
-				line=ReadNextword();
+				//line=ReadNextword();
 				wordField.setText(line);
 			
 				
