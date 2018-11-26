@@ -78,12 +78,23 @@ public class Login extends JFrame {
 		lblToeic.setBounds(176, 66, 220, 46);
 		LoginPane.add(lblToeic);
 		
+		//11.26 hun
+		LoginReq loginReq = new LoginReq();
+	
 		Button button = new Button("Login");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Main.playSound(1.0f, false);
-				login_f.setVisible(false);
-				Menu.menu_f.setVisible(true);
+				String usrid=IDField.getText();
+				String usrpwd=passwordField.getText();
+				Main.userInfo = loginReq.loginReq(usrid, usrpwd);
+				if(Main.userInfo.getName()==null) {
+					System.out.println("invaild id in Login");
+					return;
+				}else {
+					Main.playSound(1.0f, false);
+					login_f.setVisible(false);
+					Menu.menu_f.setVisible(true);
+				}
 			}
 		});
 		button.setForeground(new Color(0, 0, 0));

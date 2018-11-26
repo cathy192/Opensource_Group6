@@ -12,6 +12,8 @@ import javax.sound.sampled.LineListener;
 
 public class Main {
 	public static File Audiofile=new File("book_page.wav");
+	//11.26 hun -> 유저 정보 스태틱으로 전역 변수로 관리
+	public static UserInfo userInfo = new UserInfo();
     public static void playSound(float vol, boolean repeat){
         try{
                 final Clip clip = (Clip)AudioSystem.getLine(new Line.Info(Clip.class));

@@ -28,25 +28,62 @@ public class LoginReq {
 	public void registerUser(String name, String idL, String passL) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+		
+		//중복 아이디 존재
+		if(idExist(idL)) {
+			System.out.println("invaild id");
+			return;
+		}else {
+		
+			try {
+				conn = DriverManager.getConnection(url,id,pass);
+				String query = "insert into mem(name,id,pass) values (?,?,?)";
+				pstmt = conn.prepareStatement(query);
+				pstmt.setString(1, name);
+				pstmt.setString(2, idL);
+				pstmt.setString(3, passL);
+				pstmt.executeUpdate();
+						
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if(pstmt != null) pstmt.close();
+					if(conn != null) conn.close();
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	//아이디 있는지 확인
+	public boolean idExist(String usrid) {
+		boolean result = false;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		try {
 			conn = DriverManager.getConnection(url,id,pass);
-			String query = "insert into mem(name,id,pass) values (?,?,?)";
+			String query = "select * from mem where id = ?";
 			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, name);
-			pstmt.setString(2, idL);
-			pstmt.setString(3, passL);
-			pstmt.executeUpdate();
-					
+			pstmt.setString(1, usrid);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				result = true;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
+				if(rs != null) rs.close();
 				if(pstmt != null) pstmt.close();
 				if(conn != null) conn.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
+		return result;
 	}
 	
 	public UserInfo loginReq(String usrid, String usrpass) {
@@ -61,15 +98,17 @@ public class LoginReq {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, usrid);
 			rs = pstmt.executeQuery();
-			if(rs != null) {
-				if(usrpass.equals(rs.getString("pass"))){
-					uifo.setName(rs.getString("name"));
+			while(rs.next()) {
+				if(rs != null) {
+					if(usrpass.equals(rs.getString("pass"))){
+						uifo.setName(rs.getString("name"));
+					}
+					else {
+						//Not equal Password
+						return uifo; //name == null
+					}
+					isExist=true;
 				}
-				else {
-					//Not equal Password
-					return uifo; //name == null
-				}
-				isExist=true;
 			}
 					
 		} catch (Exception e) {
