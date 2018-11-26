@@ -39,11 +39,21 @@ public class LogM extends JFrame {
 		LogmPane.add(lblNewLabel);
 		
 		Button button = new Button("\uB85C\uADF81");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
+			}
+		});
 		button.setBackground(Color.WHITE);
 		button.setBounds(224, 153, 87, 25);
 		LogmPane.add(button);
 		
 		Button button_1 = new Button("\uB85C\uADF82");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
+			}
+		});
 		button_1.setBackground(Color.WHITE);
 		button_1.setBounds(224, 184, 87, 25);
 		LogmPane.add(button_1);
@@ -52,6 +62,7 @@ public class LogM extends JFrame {
 		button_2.setBackground(Color.WHITE);
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				logm_f.setVisible(false);
 				Menu.menu_f.setVisible(true);
 			}

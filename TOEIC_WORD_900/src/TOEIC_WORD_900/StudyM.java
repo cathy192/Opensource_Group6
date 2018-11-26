@@ -51,16 +51,31 @@ public class StudyM extends JFrame {
 		StudymPane.add(lblNewLabel);
 		
 		Button button = new Button("\uACF5\uBD801");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
+			}
+		});
 		button.setBackground(Color.WHITE);
 		button.setBounds(233, 144, 87, 25);
 		StudymPane.add(button);
 		
 		Button button_1 = new Button("\uACF5\uBD802");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
+			}
+		});
 		button_1.setBackground(Color.WHITE);
 		button_1.setBounds(233, 175, 87, 25);
 		StudymPane.add(button_1);
 		
 		Button button_2 = new Button("\uACF5\uBD803");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
+			}
+		});
 		button_2.setBackground(Color.WHITE);
 		button_2.setBounds(233, 206, 87, 25);
 		StudymPane.add(button_2);
@@ -69,6 +84,7 @@ public class StudyM extends JFrame {
 		button_3.setBackground(Color.WHITE);
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				studym_f.setVisible(false);
 				Menu.menu_f.setVisible(true);
 			}

@@ -42,11 +42,21 @@ public class TestM extends JFrame {
 		TestmPane.add(lblNewLabel);
 		
 		Button button = new Button("\uC2DC\uD5D81");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
+			}
+		});
 		button.setBackground(Color.WHITE);
 		button.setBounds(232, 162, 87, 25);
 		TestmPane.add(button);
 		
 		Button button_1 = new Button("\uC2DC\uD5D82");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
+			}
+		});
 		button_1.setBackground(Color.WHITE);
 		button_1.setBounds(232, 193, 87, 25);
 		TestmPane.add(button_1);
@@ -55,6 +65,7 @@ public class TestM extends JFrame {
 		button_2.setBackground(Color.WHITE);
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				testm_f.setVisible(false);
 				Menu.menu_f.setVisible(true);
 			}

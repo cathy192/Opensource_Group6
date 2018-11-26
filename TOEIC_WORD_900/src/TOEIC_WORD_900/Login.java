@@ -81,6 +81,7 @@ public class Login extends JFrame {
 		Button button = new Button("Login");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				login_f.setVisible(false);
 				Menu.menu_f.setVisible(true);
 			}
@@ -97,6 +98,7 @@ public class Login extends JFrame {
 		Button button_1 = new Button("\uD68C\uC6D0\uAC00\uC785");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				login_f.setVisible(false);
 				Signup.signup_f.setVisible(true);
 			}

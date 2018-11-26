@@ -42,6 +42,7 @@ public class Menu extends JFrame {
 		Button study_btn = new Button("\uACF5\uBD80\uD558\uAE30");
 		study_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				menu_f.setVisible(false);
 				StudyM.studym_f.setVisible(true);
 			}
@@ -53,6 +54,7 @@ public class Menu extends JFrame {
 		Button exam_btn = new Button("\uC2DC\uD5D8\uBCF4\uAE30");
 		exam_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				menu_f.setVisible(false);
 				TestM.testm_f.setVisible(true);
 			}
@@ -64,6 +66,7 @@ public class Menu extends JFrame {
 		Button Log_btn = new Button("\uC9C4\uCC99\uB3C4 \uBCF4\uAE30");
 		Log_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				menu_f.setVisible(false);
 				LogM.logm_f.setVisible(true);
 			}
@@ -75,6 +78,7 @@ public class Menu extends JFrame {
 		Button exit_btn = new Button("\uB098\uAC00\uAE30");
 		exit_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				menu_f.setVisible(false);
 				Login.login_f.setVisible(true);
 			}

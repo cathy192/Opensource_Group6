@@ -64,6 +64,7 @@ public class Signup extends JFrame {
 		Button button = new Button("\uC644\uB8CC");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				signup_f.setVisible(false);
 				Login.login_f.setVisible(true);
 			}
