@@ -18,8 +18,8 @@ import java.awt.event.ActionEvent;
 public class Signup extends JFrame {
 
 	private JPanel SignupPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField Naem_Field;
+	private JTextField ID_Field;
 	private JPasswordField passwordField;
 	static Signup signup_f = new Signup();
 	/**
@@ -35,27 +35,27 @@ public class Signup extends JFrame {
 		setContentPane(SignupPane);
 		SignupPane.setLayout(null);
 		
-		JLabel lblName = new JLabel("NAME :");
-		lblName.setBounds(208, 158, 49, 18);
-		SignupPane.add(lblName);
+		JLabel SignupName = new JLabel("NAME :");
+		SignupName.setBounds(208, 158, 49, 18);
+		SignupPane.add(SignupName);
 		
-		JLabel lblId = new JLabel("ID :");
-		lblId.setBounds(234, 188, 23, 18);
-		SignupPane.add(lblId);
+		JLabel SignupID = new JLabel("ID :");
+		SignupID.setBounds(234, 188, 23, 18);
+		SignupPane.add(SignupID);
 		
-		JLabel lblPassword = new JLabel("Password :");
-		lblPassword.setBounds(182, 218, 75, 18);
-		SignupPane.add(lblPassword);
+		JLabel SignupPwd = new JLabel("Password :");
+		SignupPwd.setBounds(182, 218, 75, 18);
+		SignupPane.add(SignupPwd);
 		
-		textField = new JTextField();
-		textField.setBounds(271, 155, 116, 24);
-		SignupPane.add(textField);
-		textField.setColumns(10);
+		Naem_Field = new JTextField();
+		Naem_Field.setBounds(271, 155, 116, 24);
+		SignupPane.add(Naem_Field);
+		Naem_Field.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(271, 185, 116, 24);
-		SignupPane.add(textField_1);
-		textField_1.setColumns(10);
+		ID_Field = new JTextField();
+		ID_Field.setBounds(271, 185, 116, 24);
+		SignupPane.add(ID_Field);
+		ID_Field.setColumns(10);
 		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(271, 215, 116, 24);

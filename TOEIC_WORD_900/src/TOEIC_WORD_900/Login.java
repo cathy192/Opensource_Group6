@@ -64,13 +64,13 @@ public class Login extends JFrame {
 		LoginPane.add(IDField);
 		IDField.setColumns(10);
 		
-		JLabel lblId = new JLabel("ID :");
-		lblId.setBounds(223, 147, 23, 18);
-		LoginPane.add(lblId);
+		JLabel LoginID = new JLabel("ID :");
+		LoginID.setBounds(223, 147, 23, 18);
+		LoginPane.add(LoginID);
 		
-		JLabel lblPassword = new JLabel("Password :");
-		lblPassword.setBounds(171, 205, 75, 18);
-		LoginPane.add(lblPassword);
+		JLabel LoginPwd = new JLabel("Password :");
+		LoginPwd.setBounds(171, 205, 75, 18);
+		LoginPane.add(LoginPwd);
 		
 		JLabel lblToeic = new JLabel("TOEIC 900");
 		lblToeic.setForeground(Color.PINK);
@@ -150,7 +150,7 @@ public class Login extends JFrame {
 		label_3.setFont(new Font("«‘√ ∑“µ∏øÚ", Font.BOLD, 40));
 		label_3.setBounds(204, 75, 168, 68);
 		SignupPane.add(label_3);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{LoginPane, IDField, lblId, lblPassword, lblToeic, button, passwordField, button_1}));
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{LoginPane, IDField, LoginID, LoginPwd, lblToeic, button, passwordField, button_1}));
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
