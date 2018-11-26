@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JPopupMenu;
 import java.awt.Component;
@@ -89,6 +90,7 @@ public class Login extends JFrame {
 				Main.userInfo = loginReq.loginReq(usrid, usrpwd);
 				if(Main.userInfo.getName()==null) {
 					System.out.println("invaild id in Login");
+					JOptionPane.showMessageDialog(null, "로그인 실패");
 					return;
 				}else {
 					Main.playSound(1.0f, false);

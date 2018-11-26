@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 
 
 public class LoginReq {
@@ -32,6 +34,7 @@ public class LoginReq {
 		//중복 아이디 존재
 		if(idExist(idL)) {
 			System.out.println("invaild id");
+			JOptionPane.showMessageDialog(null, "아이디 중복");
 			return;
 		}else {
 		
