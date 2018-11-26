@@ -38,7 +38,7 @@ public class Login extends JFrame {
 	private JTextField textField_1;
 	private JPasswordField passwordField_1;
 	
-	static Login frame = new Login();
+	static Login login_f = new Login();
 	/**
 	 * Launch the application.
 	 */
@@ -75,14 +75,14 @@ public class Login extends JFrame {
 		JLabel lblToeic = new JLabel("TOEIC 900");
 		lblToeic.setForeground(Color.PINK);
 		lblToeic.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 40));
-		lblToeic.setBounds(176, 66, 194, 46);
+		lblToeic.setBounds(176, 66, 220, 46);
 		LoginPane.add(lblToeic);
 		
 		Button button = new Button("Login");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				frame.setVisible(false);
-				Menu.frame3.setVisible(true);
+				login_f.setVisible(false);
+				Menu.menu_f.setVisible(true);
 			}
 		});
 		button.setForeground(new Color(0, 0, 0));
@@ -97,8 +97,8 @@ public class Login extends JFrame {
 		Button button_1 = new Button("\uD68C\uC6D0\uAC00\uC785");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				frame.setVisible(false);
-				Signup.frame2.setVisible(true);
+				login_f.setVisible(false);
+				Signup.signup_f.setVisible(true);
 			}
 		});
 		button_1.setForeground(Color.BLACK);

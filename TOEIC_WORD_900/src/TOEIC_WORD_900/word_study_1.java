@@ -35,6 +35,7 @@ public class word_study_1 extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -53,6 +54,7 @@ public class word_study_1 extends JFrame {
 			}
 		});
 	}
+	*/
 	public String ReadNextword()  {
 		
 		String line= "";

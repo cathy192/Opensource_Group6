@@ -21,7 +21,7 @@ public class Signup extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JPasswordField passwordField;
-	static Signup frame2 = new Signup();
+	static Signup signup_f = new Signup();
 	/**
 	 * Create the frame.
 	 */
@@ -64,8 +64,8 @@ public class Signup extends JFrame {
 		Button button = new Button("\uC644\uB8CC");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				frame2.setVisible(false);
-				Login.frame.setVisible(true);
+				signup_f.setVisible(false);
+				Login.login_f.setVisible(true);
 			}
 		});
 		button.setBackground(Color.WHITE);
@@ -75,7 +75,7 @@ public class Signup extends JFrame {
 		JLabel label = new JLabel("\uD68C\uC6D0 \uAC00\uC785");
 		label.setForeground(Color.PINK);
 		label.setFont(new Font("«‘√ ∑“µ∏øÚ", Font.BOLD, 40));
-		label.setBounds(204, 75, 198, 68);
+		label.setBounds(204, 75, 216, 68);
 		SignupPane.add(label);
 	}
 
