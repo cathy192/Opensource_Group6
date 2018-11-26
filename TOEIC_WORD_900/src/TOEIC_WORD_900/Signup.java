@@ -61,9 +61,14 @@ public class Signup extends JFrame {
 		passwordField.setBounds(271, 215, 116, 24);
 		SignupPane.add(passwordField);
 		
+		LoginReq loginReq=new LoginReq();
 		Button button = new Button("\uC644\uB8CC");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String name = Naem_Field.getText();
+				String id = ID_Field.getText();
+				String pass = passwordField.getText();
+				loginReq.registerUser(name, id, pass);
 				Main.playSound(1.0f, false);
 				signup_f.setVisible(false);
 				Login.login_f.setVisible(true);

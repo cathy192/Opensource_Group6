@@ -11,7 +11,7 @@ import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineListener;
 
 public class Main {
-	public static File Audiofile=new File("C:\\Users\\rkdal\\eclipse-workspace\\TOEIC_WORD_900\\book_page.wav");
+	public static File Audiofile=new File("book_page.wav");
     public static void playSound(float vol, boolean repeat){
         try{
                 final Clip clip = (Clip)AudioSystem.getLine(new Line.Info(Clip.class));
