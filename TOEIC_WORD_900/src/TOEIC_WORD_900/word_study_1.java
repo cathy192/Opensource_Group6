@@ -58,6 +58,7 @@ public class word_study_1 extends JFrame {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String line;
+				Main.playSound(1.0f, false);
 				if(cnt==30)
 					line="한번 더 누르면 처음부터 시작";
 				else if(cnt==31) {
@@ -86,6 +87,7 @@ public class word_study_1 extends JFrame {
 		study1.add(Unit);
 		Unit.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent ev) {
+            	Main.playSound(1.0f, false);
             	wordField.setText("");
             	unit=Unit.getSelectedIndex()+1;
             	Study_Unit=wordDAO.getUnit(unit);
@@ -95,6 +97,7 @@ public class word_study_1 extends JFrame {
 		Button button_1 = new Button("\uB098\uAC00\uAE30");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Main.playSound(1.0f, false);
 				study1_f.setVisible(false);
 				StudyM.studym_f.setVisible(true);
 			}

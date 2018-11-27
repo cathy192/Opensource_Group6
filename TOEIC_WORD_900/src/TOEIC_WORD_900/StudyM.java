@@ -19,18 +19,7 @@ public class StudyM extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					StudyM frame = new StudyM();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
@@ -67,6 +56,8 @@ public class StudyM extends JFrame {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Main.playSound(1.0f, false);
+				studym_f.setVisible(false);
+				word_study_2.study2_f.setVisible(true);
 			}
 		});
 		button_1.setBackground(Color.WHITE);
