@@ -17,7 +17,7 @@ public class wordDAO {
 	public static FileReader filereader;
 	public static BufferedReader bufReader;
 	static final String id = "root";
-	static final String pass = "ss99223!";
+	static final String pass = "1234";
 	static String url = "jdbc:mysql://127.0.0.1:3306/java?serverTimezone=UTC";
 
 public wordDAO() {
@@ -41,12 +41,11 @@ public static word_unit getUnit(int unit)  {
 		String query = "select * from words";
 		pstmt = conn.prepareStatement(query);
 		rs = pstmt.executeQuery();
-		int cnt=0;
 		while(rs.next()) {
 			wordDTO dto = new wordDTO();
 			dto.setunit(rs.getInt("unit"));
 			if(dto.getunit()!=unit) {
-				break;
+				continue;
 			}
 			dto.setword(rs.getString("word"));
 			dto.setmean(rs.getString("mean"));

@@ -1,7 +1,8 @@
 package TOEIC_WORD_900;
 
 import java.awt.BorderLayout;
-
+import java.awt.Button;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,6 +11,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.ActionEvent;
 
 import java.io.BufferedReader;
@@ -25,13 +28,15 @@ import javax.swing.DefaultComboBoxModel;
 
 public class word_study_1 extends JFrame {
 
-	private JPanel contentPane;
+	private JPanel study1;
 	private JTextField wordField;
+	private int unit=1;
+	private int cnt=0;
 	public static File file;
 	public static FileReader filereader;
 	public static BufferedReader bufReader;
-	
-	
+	private word_unit Study_Unit=wordDAO.getUnit(unit);
+	static word_study_1 study1_f=new word_study_1();
 	/**
 	 * Launch the application.
 	 */
@@ -41,36 +46,61 @@ public class word_study_1 extends JFrame {
 	public word_study_1() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 671, 427);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		study1 = new JPanel();
+		study1.setForeground(Color.BLACK);
+		study1.setBackground(Color.WHITE);
+		study1.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(study1);
+		study1.setLayout(null);
 		
-		JButton btnNewButton_1 = new JButton("\uB2E4\uC74C \uB2E8\uC5B4");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		
+		Button button = new Button("\uB2E4\uC74C \uB2E8\uC5B4");
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String line="";	
-				//line=ReadNextword();
+				String line;
+				if(cnt==30)
+					line="한번 더 누르면 처음부터 시작";
+				else if(cnt==31) {
+					cnt=0;
+					line=Study_Unit.word[cnt]+"	"+Study_Unit.mean[cnt];	
+				}
+				else {
+				line=Study_Unit.word[cnt]+"	"+Study_Unit.mean[cnt];	
+				}
 				wordField.setText(line);
-			
-				
+				cnt++;
 			}
 		});
-		btnNewButton_1.setBounds(133, 301, 387, 27);
-		contentPane.add(btnNewButton_1);
+		button.setBackground(Color.WHITE);
+		button.setBounds(133, 290, 387, 25);
+		study1.add(button);
 		
 		wordField = new JTextField();
 		wordField.setBounds(133, 97, 387, 162);
-		contentPane.add(wordField);
+		study1.add(wordField);
 		wordField.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9", "Day 10", "Day 11", "Day 12", "Day 13", "Day 14", "Day 15", "Day 16", "Day 17", "Day 18", "Day 19", "Day 20", "Day 21", "Day 22", "Day 23", "Day 24", "Day 25", "Day 26", "Day 27", "Day 28", "Day 29", "Day 30"}));
-		comboBox.setBounds(133, 61, 94, 24);
-		contentPane.add(comboBox);
-		
-		JButton button = new JButton("\uB098\uAC00\uAE30");
-		button.setBounds(415, 58, 105, 27);
-		contentPane.add(button);
+		JComboBox Unit = new JComboBox();
+		Unit.setModel(new DefaultComboBoxModel(new String[] {"Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5", "Unit 6", "Unit 7", "Unit 8", "Unit 9", "Unit 10", "Unit 11", "Unit 12", "Unit 13", "Unit 14", "Unit 15", "Unit 16", "Unit 17", "Unit 18", "Unit 19", "Unit 20", "Unit 21", "Unit 22", "Unit 23", "Unit 24", "Unit 25", "Unit 26", "Unit 27", "Unit 28", "Unit 29", "Unit 30"}));
+		Unit.setBounds(133, 61, 94, 24);
+		study1.add(Unit);
+		Unit.addItemListener(new ItemListener() {
+            public void itemStateChanged(ItemEvent ev) {
+            	wordField.setText("");
+            	unit=Unit.getSelectedIndex()+1;
+            	Study_Unit=wordDAO.getUnit(unit);
+            	 cnt=0;
+            }
+		});
+		Button button_1 = new Button("\uB098\uAC00\uAE30");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				study1_f.setVisible(false);
+				StudyM.studym_f.setVisible(true);
+			}
+		});
+		button_1.setBackground(Color.WHITE);
+		button_1.setBounds(433, 61, 87, 25);
+		study1.add(button_1);
 	}
 }

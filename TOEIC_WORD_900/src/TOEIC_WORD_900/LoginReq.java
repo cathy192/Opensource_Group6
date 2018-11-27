@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public class LoginReq {
 
 	static final String id = "root";
-	static final String pass = "root";
+	static final String pass = "1234";
 	String url = "jdbc:mysql://127.0.0.1:3306/java?serverTimezone=UTC";
 	
 	LoginReq(){
