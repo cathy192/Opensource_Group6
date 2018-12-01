@@ -16,7 +16,8 @@ public class AdvanceGraph {
 	
 		 MyFrame f = new MyFrame("선끝 조절");
 		 AdvanceReq advanceReq= new AdvanceReq();
-		 advanceReq.insertInfo("r", 1, 80, true, "000000000000000000000000000000");
+		 String rat = advanceReq.getWrong("r", 1);
+		 System.out.println(rat);
 	 }
 	
 	} 

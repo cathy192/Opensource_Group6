@@ -54,7 +54,69 @@ public class AdvanceReq {
       return chap;
    }
    
+   	//주어진 유닛 정답률 반환 
+ 	public int getAnsRatio(String usrid, int unit) {
+ 		int ansRatio=0;
+ 		Connection conn = null;
+ 		PreparedStatement pstmt = null;
+ 		ResultSet rs = null;
+ 		try {
+ 			conn = DriverManager.getConnection(url,id,pass);
+ 			String query = "select * from test where id = ? and unit = ?";
+ 			pstmt = conn.prepareStatement(query);
+ 			pstmt.setString(1, usrid);
+ 			pstmt.setInt(2, unit);
+ 			rs = pstmt.executeQuery();
+ 			while(rs.next()) {
+ 				if(rs!=null && rs.getBoolean("pass")) {
+ 					ansRatio=rs.getInt("ansRatio");
+ 				}
+ 			}
+ 		} catch (Exception e) {
+ 			e.printStackTrace();
+ 		} finally {
+ 			try {
+ 				if(rs != null) rs.close();
+ 				if(pstmt != null) pstmt.close();
+ 				if(conn != null) conn.close();
+ 			} catch(Exception e) {
+ 				e.printStackTrace();
+ 			}
+ 		}
+ 		return ansRatio;
+ 	}
    
+ 	//주어진 유닛 틀린것 반환 
+ 	 	public String getWrong(String usrid, int unit) {
+ 	 		String wrong="";
+ 	 		Connection conn = null;
+ 	 		PreparedStatement pstmt = null;
+ 	 		ResultSet rs = null;
+ 	 		try {
+ 	 			conn = DriverManager.getConnection(url,id,pass);
+ 	 			String query = "select * from test where id = ? and unit = ?";
+ 	 			pstmt = conn.prepareStatement(query);
+ 	 			pstmt.setString(1, usrid);
+ 	 			pstmt.setInt(2, unit);
+ 	 			rs = pstmt.executeQuery();
+ 	 			while(rs.next()) {
+ 	 				if(rs!=null && rs.getBoolean("pass")) {
+ 	 					wrong=rs.getString("wrong");
+ 	 				}
+ 	 			}
+ 	 		} catch (Exception e) {
+ 	 			e.printStackTrace();
+ 	 		} finally {
+ 	 			try {
+ 	 				if(rs != null) rs.close();
+ 	 				if(pstmt != null) pstmt.close();
+ 	 				if(conn != null) conn.close();
+ 	 			} catch(Exception e) {
+ 	 				e.printStackTrace();
+ 	 			}
+ 	 		}
+ 	 		return wrong;
+ 	 	}
    
    
    public void insertInfo(String usrid,int unit,int ansRatio,Boolean passf,String wrong) {
