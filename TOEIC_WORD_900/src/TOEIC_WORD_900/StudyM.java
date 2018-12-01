@@ -68,6 +68,8 @@ public class StudyM extends JFrame {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Main.playSound(1.0f, false);
+				studym_f.setVisible(false);
+				word_study_3.study3_f.setVisible(true);
 			}
 		});
 		button_2.setBackground(Color.WHITE);

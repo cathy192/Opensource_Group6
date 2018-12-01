@@ -35,8 +35,8 @@ public class word_study_1 extends JFrame {
 	public static File file;
 	public static FileReader filereader;
 	public static BufferedReader bufReader;
-	private word_unit Study_Unit=wordDAO.getUnit(unit);
 	static word_study_1 study1_f=new word_study_1();
+	private word_unit Study_Unit=wordDAO.getUnit(unit);
 	/**
 	 * Launch the application.
 	 */
@@ -77,6 +77,7 @@ public class word_study_1 extends JFrame {
 		study1.add(button);
 		
 		wordField = new JTextField();
+		wordField.setText("Unit "+unit);
 		wordField.setBounds(133, 97, 387, 162);
 		study1.add(wordField);
 		wordField.setColumns(10);
@@ -91,6 +92,7 @@ public class word_study_1 extends JFrame {
             	wordField.setText("");
             	unit=Unit.getSelectedIndex()+1;
             	Study_Unit=wordDAO.getUnit(unit);
+            	wordField.setText("Unit "+unit);
             	 cnt=0;
             }
 		});

@@ -35,10 +35,10 @@ public class wordDTO {
 	public void setmean(String mean) {
 		this.mean = mean;
 	}
-	public boolean Wrong() {
+	public boolean getwrong() {
 		return wrong;
 	}
-	public void setWrong(boolean wrong) {
+	public void setwrong(boolean wrong) {
 		this.wrong=wrong;
 	}
 	

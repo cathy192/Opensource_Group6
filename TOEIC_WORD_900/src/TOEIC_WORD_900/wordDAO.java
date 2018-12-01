@@ -65,6 +65,44 @@ public static word_unit getUnit(int unit)  {
 	}
 	return result;
 }
+public static word_unit getWrongUnit(int unit)  {
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	word_unit result=new word_unit(unit);
+	try {
+		conn = DriverManager.getConnection(url,id,pass);
+		String query = "select * from words";
+		pstmt = conn.prepareStatement(query);
+		rs = pstmt.executeQuery();
+		while(rs.next()) {
+			wordDTO dto = new wordDTO();
+			dto.setunit(rs.getInt("unit"));
+			if(dto.getunit()>=unit&&dto.getunit()<unit+5) {
+				dto.setwrong(rs.getBoolean("wrong"));
+				if(dto.getwrong()) {
+					dto.setword(rs.getString("word"));
+					dto.setmean(rs.getString("mean"));
+					result.get_DTO(dto);
+				}
+			}
+			else continue;
+			
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}finally {
+		try {
+			if(rs != null) rs.close();
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	return result;
+}
 public static void insert(int unit,String word,String mean) {
 	Connection conn = null;
 	PreparedStatement pstmt = null;
