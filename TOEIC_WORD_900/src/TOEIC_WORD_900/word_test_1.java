@@ -43,12 +43,12 @@ public class word_test_1 extends JFrame {
    private JTextField answerField;
      
    String answer;
-   private int wrongcnt;
+   private int wrongcnt=0;
    private Random rand=new Random();
    private int problem;
    private JTextField correct;
    private String Wrong="";
-   private int percent;
+   private float percent;
    private boolean pass=false;
    private boolean was=false;
    private boolean press=true;
@@ -82,14 +82,14 @@ public class word_test_1 extends JFrame {
             if(press) {
                press=false;  
             if(cnt==30) {
-               percent=(30-wrongcnt)/30*100;
+            	percent=(30-wrongcnt)*100/30;
                if(percent>=70) {
                   line="시험 통과";
                   pass=true;
-                  advanceReq.insertInfo( Main.userInfo.getName(), unit, percent, pass, Wrong);
+                  advanceReq.insertInfo( Main.userInfo.getName(), unit, (int)percent, pass, Wrong);
                }
                else {
-                  line="다시 하세요";
+                  line="다시 하세요"+percent;
                }
                
                
@@ -98,12 +98,12 @@ public class word_test_1 extends JFrame {
             	line="Unit "+unit+" TEST 종료";
             }
             else {
-              
+            	
                if(problem==0) {
-            	   line=(cnt+1)+".뜻: "+Study_Unit.mean[cnt]+"\n";       
+            	   line=(cnt+1)+".뜻: "+Study_Unit.mean[cnt]+"\n"+percent;       
                }
                else {
-            	   line=(cnt+1)+".단어: "+Study_Unit.word[cnt]+"\n";
+            	   line=(cnt+1)+".단어: "+Study_Unit.word[cnt]+"\n"+percent;
                }
                  cnt++;
                     
