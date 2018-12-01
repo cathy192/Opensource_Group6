@@ -54,6 +54,9 @@ public class AdvanceReq {
       return chap;
    }
    
+ 
+   
+   
    	//주어진 유닛 정답률 반환 
  	public int getAnsRatio(String usrid, int unit) {
  		int ansRatio=0;

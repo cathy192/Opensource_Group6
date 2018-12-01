@@ -89,6 +89,36 @@ public class LoginReq {
 		return result;
 	}
 	
+		//12.01
+	  //모든 유저 아이디 반환
+	   public AdvanceUserArray getAllUser() {
+	      AdvanceUserArray aua=new AdvanceUserArray();
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      try {
+	         conn = DriverManager.getConnection(url,id,pass);
+	         String query = "select * from mem";
+	         pstmt = conn.prepareStatement(query);
+	         rs = pstmt.executeQuery();
+	         while(rs.next()) {
+					aua.setUser(rs.getString("id"));
+	
+				}
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         try {
+	            if(rs != null) rs.close();
+	            if(pstmt != null) pstmt.close();
+	            if(conn != null) conn.close();
+	         } catch(Exception e) {
+	            e.printStackTrace();
+	         }
+	      }
+	      return aua;
+	   }
+	
 	public UserInfo loginReq(String usrid, String usrpass) {
 		UserInfo uifo=new UserInfo(usrid,usrpass);
 		boolean isExist = false;
