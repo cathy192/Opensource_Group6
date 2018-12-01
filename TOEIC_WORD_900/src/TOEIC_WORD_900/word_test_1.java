@@ -100,16 +100,14 @@ public class word_test_1 extends JFrame {
             else {
             	
                if(problem==0) {
-            	   line=(cnt+1)+".뜻: "+Study_Unit.mean[cnt]+"\n"+percent;       
+            	   line=(cnt+1)+".뜻: "+Study_Unit.mean[cnt]+"\n";       
                }
                else {
-            	   line=(cnt+1)+".단어: "+Study_Unit.word[cnt]+"\n"+percent;
+            	   line=(cnt+1)+".단어: "+Study_Unit.word[cnt]+"\n";
                }
                  cnt++;
                     
                }
-          
-            answerField.setText(Wrong);
             wordField.setText(line); 
                
                 
@@ -188,7 +186,7 @@ public class word_test_1 extends JFrame {
                          Wrong+="0";
                       }
                       else          {       
-                         answerField.setText("틀림 "+Study_Unit.word[cnt-1]);
+                         answerField.setText("틀림");
                          wrongcnt++;
                          Wrong+="1";
                          correct.setText(Integer.toString(wrongcnt)+"/30");
@@ -206,7 +204,7 @@ public class word_test_1 extends JFrame {
             			 }
             		 }
             		 if(i==mean_answer.length) {
-            			 answerField.setText("틀림 "+mean_answer[0]);
+            			 answerField.setText("틀림 ");
                          wrongcnt++;
                          Wrong+="1";
                          correct.setText(Integer.toString(wrongcnt)+"/30");

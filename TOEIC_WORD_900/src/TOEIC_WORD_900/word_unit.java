@@ -5,6 +5,9 @@ public class word_unit {
 	public String[] mean = new String[30];
 	private int cnt=0;
 	public int Unit;
+	public word_unit() {
+		// TODO Auto-generated constructor stub
+	}
 	public word_unit(int unit) {
 		// TODO Auto-generated constructor stub
 		Unit=unit;

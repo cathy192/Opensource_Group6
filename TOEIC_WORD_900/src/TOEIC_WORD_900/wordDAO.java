@@ -65,7 +65,7 @@ public static word_unit getUnit(int unit)  {
 	}
 	return result;
 }
-public static word_unit getWrongUnit(int unit)  {
+public static word_unit getWrongUnit(int unit,String wrong)  {
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -75,19 +75,20 @@ public static word_unit getWrongUnit(int unit)  {
 		String query = "select * from words";
 		pstmt = conn.prepareStatement(query);
 		rs = pstmt.executeQuery();
+		int i=0;
 		while(rs.next()) {
+			
 			wordDTO dto = new wordDTO();
 			dto.setunit(rs.getInt("unit"));
-			if(dto.getunit()>=unit&&dto.getunit()<unit+5) {
-				dto.setwrong(rs.getBoolean("wrong"));
-				if(dto.getwrong()) {
-					dto.setword(rs.getString("word"));
-					dto.setmean(rs.getString("mean"));
-					result.get_DTO(dto);
-				}
+			if(dto.getunit()!=unit) {
+				continue;
 			}
-			else continue;
-			
+			if(wrong.charAt(i)=='1') {
+				dto.setword(rs.getString("word"));
+				dto.setmean(rs.getString("mean"));
+				result.get_DTO(dto);
+			}
+			i++;
 		}
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
@@ -102,6 +103,7 @@ public static word_unit getWrongUnit(int unit)  {
 		}
 	}
 	return result;
+		
 }
 public static void insert(int unit,String word,String mean) {
 	Connection conn = null;
