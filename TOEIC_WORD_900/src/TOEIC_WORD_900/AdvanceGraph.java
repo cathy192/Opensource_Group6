@@ -66,7 +66,7 @@ public class AdvanceGraph {
 	   
 	    LoginReq loginReq=new LoginReq();
 	    AdvanceUserArray aua = loginReq.getAllUser();
-	    for(int i=0;aua.getCnt();i++) {
+	    for(int i=0;i<aua.getCnt();i++) {
 	    	System.out.println(aua.getUser(i));
 	    }
 	    
