@@ -44,7 +44,7 @@ public class word_test_1 extends JFrame {
      
    String answer;
    private int wrongcnt;
-   private Random rand;
+   private Random rand=new Random();
    private int problem;
    private JTextField correct;
    private String Wrong="";
@@ -52,7 +52,6 @@ public class word_test_1 extends JFrame {
    private boolean pass=false;
    private boolean was=false;
    private boolean press=true;
-  
    /**
     * Launch the application.
     */
@@ -79,8 +78,9 @@ public class word_test_1 extends JFrame {
             String line,mean=null,print=null;
             Main.playSound(1.0f, false);
             was=false;
-            if(press||cnt==0) {
-               press=false;
+            problem=rand.nextInt(2);
+            if(press) {
+               press=false;  
             if(cnt==30) {
                percent=wrongcnt/30*100;
                if(percent>=70) {
@@ -98,7 +98,7 @@ public class word_test_1 extends JFrame {
             	line="Unit "+unit+" TEST 종료";
             }
             else {
-               problem=rand.nextInt(2);
+              
                if(problem==0) {
             	   line=(cnt+1)+".뜻: "+Study_Unit.mean[cnt]+"\n";       
                }
@@ -196,7 +196,7 @@ public class word_test_1 extends JFrame {
             	 }
                 }
             	 else {
-            		 String[] mean_answer=Study_Unit.mean[cnt-1].split("|");
+            		 String[] mean_answer=Study_Unit.mean[cnt-1].split("[|]");
             		 int i;
             		 for(i=0;i<mean_answer.length;i++) {
             			 if(mean_answer[i].equals(answer)) {
@@ -206,7 +206,7 @@ public class word_test_1 extends JFrame {
             			 }
             		 }
             		 if(i==mean_answer.length) {
-            			 answerField.setText("틀림 "+Study_Unit.word[cnt-1]);
+            			 answerField.setText("틀림 "+mean_answer[0]);
                          wrongcnt++;
                          Wrong+="1";
                          correct.setText(Integer.toString(wrongcnt)+"/30");
