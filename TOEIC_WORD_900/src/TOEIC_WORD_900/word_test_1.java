@@ -82,7 +82,7 @@ public class word_test_1 extends JFrame {
             if(press) {
                press=false;  
             if(cnt==30) {
-               percent=wrongcnt/30*100;
+               percent=(30-wrongcnt)/30*100;
                if(percent>=70) {
                   line="시험 통과";
                   pass=true;
