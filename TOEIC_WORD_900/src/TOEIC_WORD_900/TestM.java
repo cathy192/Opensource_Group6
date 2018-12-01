@@ -46,7 +46,7 @@ public class TestM extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				Main.playSound(1.0f, false);
 				testm_f.setVisible(false);
-				word_test_1.study1_f.setVisible(true);
+				word_test_1.test1_f.setVisible(true);
 			}
 		});
 		button.setBackground(Color.WHITE);
