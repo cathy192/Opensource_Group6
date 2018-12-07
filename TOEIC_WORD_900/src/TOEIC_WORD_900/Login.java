@@ -52,7 +52,7 @@ public class Login extends JFrame {
 		setTitle("TOEIC 900");
 		setBackground(new Color(0, 0, 0));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 400);
+		setBounds(100, 100, 611, 427);
 		LoginPane = new JPanel();
 		LoginPane.setForeground(Color.BLACK);
 		LoginPane.setBorder(null);
@@ -61,22 +61,14 @@ public class Login extends JFrame {
 		LoginPane.setLayout(null);
 		
 		IDField = new JTextField();
-		IDField.setBounds(254, 144, 116, 24);
+		IDField.setBounds(226, 160, 137, 38);
 		LoginPane.add(IDField);
 		IDField.setColumns(10);
 		
-		JLabel LoginID = new JLabel("ID :");
-		LoginID.setBounds(223, 147, 23, 18);
-		LoginPane.add(LoginID);
-		
-		JLabel LoginPwd = new JLabel("Password :");
-		LoginPwd.setBounds(171, 205, 75, 18);
-		LoginPane.add(LoginPwd);
-		
 		JLabel lblToeic = new JLabel("TOEIC 900");
-		lblToeic.setForeground(Color.PINK);
+		lblToeic.setForeground(new Color(139, 0, 0));
 		lblToeic.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 40));
-		lblToeic.setBounds(176, 66, 220, 46);
+		lblToeic.setBounds(174, 64, 220, 46);
 		LoginPane.add(lblToeic);
 		
 		//11.26 hun
@@ -101,11 +93,16 @@ public class Login extends JFrame {
 		});
 		button.setForeground(new Color(0, 0, 0));
 		button.setBackground(new Color(255, 255, 255));
-		button.setBounds(321, 243, 49, 25);
+		button.setBounds(314, 273, 49, 25);
 		LoginPane.add(button);
 		
+		JLabel lblId = new JLabel("      ID");
+		lblId.setFont(new Font("±º∏≤", Font.BOLD, 22));
+		lblId.setBounds(137, 160, 89, 38);
+		LoginPane.add(lblId);
+		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(254, 202, 116, 24);
+		passwordField.setBounds(226, 222, 137, 38);
 		LoginPane.add(passwordField);
 		
 		Button button_1 = new Button("\uD68C\uC6D0\uAC00\uC785");
@@ -118,8 +115,19 @@ public class Login extends JFrame {
 		});
 		button_1.setForeground(Color.BLACK);
 		button_1.setBackground(Color.WHITE);
-		button_1.setBounds(290, 277, 80, 25);
+		button_1.setBounds(174, 273, 80, 25);
 		LoginPane.add(button_1);
+		
+		JLabel lblPassword = new JLabel("      PW");
+		lblPassword.setFont(new Font("±º∏≤", Font.BOLD, 22));
+		lblPassword.setBounds(106, 222, 120, 38);
+		LoginPane.add(lblPassword);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\rkdal\\Downloads\\\uB0D0\uB0D0\uB0D0.jpg"));
+		lblNewLabel_1.setBounds(14, 0, 584, 391);
+		LoginPane.add(lblNewLabel_1);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{LoginPane, IDField, lblToeic, button, passwordField, button_1}));
 		
 		JPanel SignupPane = new JPanel();
 		SignupPane.setLayout(null);
@@ -165,7 +173,6 @@ public class Login extends JFrame {
 		label_3.setFont(new Font("«‘√ ∑“µ∏øÚ", Font.BOLD, 40));
 		label_3.setBounds(204, 75, 168, 68);
 		SignupPane.add(label_3);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{LoginPane, IDField, LoginID, LoginPwd, lblToeic, button, passwordField, button_1}));
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {

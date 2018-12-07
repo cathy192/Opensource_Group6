@@ -30,6 +30,7 @@ import java.util.Scanner;
 import javax.swing.JLabel;
 
 import java.util.Random;
+import javax.swing.ImageIcon;
 public class word_test_1 extends JFrame {
 
    private JPanel test1;
@@ -232,5 +233,10 @@ public class word_test_1 extends JFrame {
       JLabel label_2 = new JLabel("\uD2C0\uB9B0 \uAC1C\uC218:");
       label_2.setBounds(277, 64, 57, 15);
       test1.add(label_2);
+      
+      JLabel lblNewLabel = new JLabel("New label");
+      lblNewLabel.setIcon(new ImageIcon("C:\\Users\\rkdal\\Desktop\\\uBC30\uACBD2.jpg"));
+      lblNewLabel.setBounds(0, 0, 653, 380);
+      test1.add(lblNewLabel);
    }
 }

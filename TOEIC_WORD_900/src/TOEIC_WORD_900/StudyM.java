@@ -11,6 +11,7 @@ import java.awt.Font;
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class StudyM extends JFrame {
 
@@ -33,13 +34,9 @@ public class StudyM extends JFrame {
 		setContentPane(StudymPane);
 		StudymPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("TOEIC 900");
-		lblNewLabel.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 40));
-		lblNewLabel.setForeground(Color.PINK);
-		lblNewLabel.setBounds(177, 50, 232, 58);
-		StudymPane.add(lblNewLabel);
-		
-		Button button = new Button("\uACF5\uBD801");
+		Button button = new Button("One by One");
+		button.setFont(new Font("Dialog", Font.BOLD, 13));
+		button.setForeground(new Color(139, 0, 0));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Main.playSound(1.0f, false);
@@ -49,10 +46,12 @@ public class StudyM extends JFrame {
 			}
 		});
 		button.setBackground(Color.WHITE);
-		button.setBounds(233, 144, 87, 25);
+		button.setBounds(418, 140, 108, 25);
 		StudymPane.add(button);
 		
-		Button button_1 = new Button("\uACF5\uBD802");
+		Button button_1 = new Button("Scroll");
+		button_1.setFont(new Font("Dialog", Font.BOLD, 13));
+		button_1.setForeground(new Color(139, 0, 0));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Main.playSound(1.0f, false);
@@ -61,10 +60,12 @@ public class StudyM extends JFrame {
 			}
 		});
 		button_1.setBackground(Color.WHITE);
-		button_1.setBounds(233, 175, 87, 25);
+		button_1.setBounds(418, 194, 108, 25);
 		StudymPane.add(button_1);
 		
-		Button button_2 = new Button("\uACF5\uBD803");
+		Button button_2 = new Button("Wrong answer");
+		button_2.setForeground(new Color(139, 0, 0));
+		button_2.setFont(new Font("Dialog", Font.BOLD, 13));
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Main.playSound(1.0f, false);
@@ -73,10 +74,12 @@ public class StudyM extends JFrame {
 			}
 		});
 		button_2.setBackground(Color.WHITE);
-		button_2.setBounds(233, 206, 87, 25);
+		button_2.setBounds(418, 248, 108, 25);
 		StudymPane.add(button_2);
 		
 		Button button_3 = new Button("Main Menu");
+		button_3.setFont(new Font("Dialog", Font.BOLD, 13));
+		button_3.setForeground(new Color(139, 0, 0));
 		button_3.setBackground(Color.WHITE);
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -85,7 +88,18 @@ public class StudyM extends JFrame {
 				Menu.menu_f.setVisible(true);
 			}
 		});
-		button_3.setBounds(233, 267, 87, 25);
+		button_3.setBounds(418, 293, 108, 25);
 		StudymPane.add(button_3);
+		
+		JLabel label_1 = new JLabel("TOEIC 900");
+		label_1.setForeground(new Color(139, 0, 0));
+		label_1.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 50));
+		label_1.setBounds(25, 36, 276, 91);
+		StudymPane.add(label_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\rkdal\\Desktop\\\uBC30\uACBD2.jpg"));
+		lblNewLabel_1.setBounds(0, 0, 593, 366);
+		StudymPane.add(lblNewLabel_1);
 	}
 }

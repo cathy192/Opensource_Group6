@@ -12,6 +12,7 @@ import java.awt.Font;
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class LogM extends JFrame {
 
@@ -32,33 +33,42 @@ public class LogM extends JFrame {
 		setContentPane(LogmPane);
 		LogmPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("TOEIC 900");
-		lblNewLabel.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 40));
-		lblNewLabel.setForeground(Color.PINK);
-		lblNewLabel.setBounds(162, 59, 231, 66);
-		LogmPane.add(lblNewLabel);
-		
-		Button button = new Button("\uB85C\uADF81");
+		Button button = new Button("Progress");
+		button.setForeground(new Color(139, 0, 0));
+		button.setFont(new Font("Dialog", Font.BOLD, 15));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Main.playSound(1.0f, false);
+
+				logm_f.setVisible(false);
+				AdvanceGraph.adgp1_f.setVisible(true);
 			}
 		});
+		
+		JLabel label = new JLabel("TOEIC 900");
+		label.setForeground(new Color(139, 0, 0));
+		label.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 50));
+		label.setBounds(25, 36, 276, 91);
+		LogmPane.add(label);
 		button.setBackground(Color.WHITE);
-		button.setBounds(224, 153, 87, 25);
+		button.setBounds(418, 140, 100, 25);
 		LogmPane.add(button);
 		
-		Button button_1 = new Button("\uB85C\uADF82");
+		Button button_1 = new Button("Ranking");
+		button_1.setForeground(new Color(139, 0, 0));
+		button_1.setFont(new Font("Dialog", Font.BOLD, 15));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Main.playSound(1.0f, false);
 			}
 		});
 		button_1.setBackground(Color.WHITE);
-		button_1.setBounds(224, 184, 87, 25);
+		button_1.setBounds(418, 194, 100, 25);
 		LogmPane.add(button_1);
 		
 		Button button_2 = new Button("Main Menu");
+		button_2.setForeground(new Color(139, 0, 0));
+		button_2.setFont(new Font("Dialog", Font.BOLD, 15));
 		button_2.setBackground(Color.WHITE);
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -67,8 +77,13 @@ public class LogM extends JFrame {
 				Menu.menu_f.setVisible(true);
 			}
 		});
-		button_2.setBounds(224, 244, 87, 25);
+		button_2.setBounds(418, 248, 100, 25);
 		LogmPane.add(button_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\rkdal\\Desktop\\\uBC30\uACBD2.jpg"));
+		lblNewLabel_1.setBounds(0, 0, 582, 353);
+		LogmPane.add(lblNewLabel_1);
 	}
 
 }

@@ -20,6 +20,8 @@ import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class word_study_2 extends JFrame {
 
@@ -99,6 +101,11 @@ public class word_study_2 extends JFrame {
 		button_1.setBackground(Color.WHITE);
 		button_1.setBounds(406, 47, 87, 25);
 		study2.add(button_1);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\rkdal\\Desktop\\\uBC30\uACBD2.jpg"));
+		lblNewLabel.setBounds(0, 0, 594, 363);
+		study2.add(lblNewLabel);
 		
 		
 		

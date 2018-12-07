@@ -29,6 +29,7 @@ import java.util.Scanner;
 import javax.swing.JLabel;
 
 import java.util.Random;
+import javax.swing.ImageIcon;
 public class word_test_2 extends JFrame {
 
    private JPanel test2;
@@ -213,5 +214,10 @@ public class word_test_2 extends JFrame {
       button_2.setBackground(Color.WHITE);
       button_2.setBounds(242, 290, 122, 25);
       test2.add(button_2);
+      
+      JLabel lblNewLabel = new JLabel("New label");
+      lblNewLabel.setIcon(new ImageIcon("C:\\Users\\rkdal\\Desktop\\\uBC30\uACBD2.jpg"));
+      lblNewLabel.setBounds(0, 0, 653, 380);
+      test2.add(lblNewLabel);
    }
 }

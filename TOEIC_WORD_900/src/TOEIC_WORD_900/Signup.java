@@ -14,6 +14,7 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class Signup extends JFrame {
 
@@ -28,7 +29,7 @@ public class Signup extends JFrame {
 	public Signup() {
 		setTitle("TOEIC_900");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 400);
+		setBounds(100, 100, 619, 429);
 		SignupPane = new JPanel();
 		SignupPane.setBackground(Color.WHITE);
 		SignupPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -36,14 +37,17 @@ public class Signup extends JFrame {
 		SignupPane.setLayout(null);
 		
 		JLabel SignupName = new JLabel("NAME :");
+		SignupName.setFont(new Font("Dialog", Font.PLAIN, 15));
 		SignupName.setBounds(208, 158, 49, 18);
 		SignupPane.add(SignupName);
 		
 		JLabel SignupID = new JLabel("ID :");
+		SignupID.setFont(new Font("Dialog", Font.PLAIN, 15));
 		SignupID.setBounds(234, 188, 23, 18);
 		SignupPane.add(SignupID);
 		
 		JLabel SignupPwd = new JLabel("Password :");
+		SignupPwd.setFont(new Font("Dialog", Font.PLAIN, 15));
 		SignupPwd.setBounds(182, 218, 75, 18);
 		SignupPane.add(SignupPwd);
 		
@@ -63,6 +67,8 @@ public class Signup extends JFrame {
 		
 		LoginReq loginReq=new LoginReq();
 		Button button = new Button("\uC644\uB8CC");
+		button.setForeground(new Color(139, 0, 0));
+		button.setFont(new Font("Dialog", Font.BOLD, 14));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String name = Naem_Field.getText();
@@ -78,11 +84,16 @@ public class Signup extends JFrame {
 		button.setBounds(300, 245, 87, 25);
 		SignupPane.add(button);
 		
-		JLabel label = new JLabel("\uD68C\uC6D0 \uAC00\uC785");
-		label.setForeground(Color.PINK);
-		label.setFont(new Font("«‘√ ∑“µ∏øÚ", Font.BOLD, 40));
-		label.setBounds(204, 75, 216, 68);
-		SignupPane.add(label);
+		JLabel lblSignUp = new JLabel("Sign up");
+		lblSignUp.setForeground(new Color(139, 0, 0));
+		lblSignUp.setFont(new Font("Bodoni MT Black", Font.BOLD, 41));
+		lblSignUp.setBounds(174, 64, 220, 46);
+		SignupPane.add(lblSignUp);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\rkdal\\Downloads\\\uB0D0\uB0D0\uB0D0.jpg"));
+		lblNewLabel.setBounds(14, 6, 587, 382);
+		SignupPane.add(lblNewLabel);
 	}
 
 }

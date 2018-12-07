@@ -25,6 +25,8 @@ import java.io.RandomAccessFile;
 import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class word_study_3 extends JFrame {
 
@@ -47,7 +49,7 @@ public class word_study_3 extends JFrame {
 		
 	public word_study_3() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 671, 427);
+		setBounds(100, 100, 600, 400);
 		study1 = new JPanel();
 		study1.setForeground(Color.BLACK);
 		study1.setBackground(Color.WHITE);
@@ -113,5 +115,10 @@ public class word_study_3 extends JFrame {
 		button_1.setBackground(Color.WHITE);
 		button_1.setBounds(433, 61, 87, 25);
 		study1.add(button_1);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\rkdal\\Desktop\\\uBC30\uACBD2.jpg"));
+		label.setBounds(0, 0, 663, 391);
+		study1.add(label);
 	}
 }

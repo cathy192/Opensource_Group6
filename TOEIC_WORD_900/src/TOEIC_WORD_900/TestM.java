@@ -12,6 +12,7 @@ import java.awt.Font;
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class TestM extends JFrame {
 
@@ -35,13 +36,9 @@ public class TestM extends JFrame {
       setContentPane(TestmPane);
       TestmPane.setLayout(null);
       
-      JLabel lblNewLabel = new JLabel("TOEIC 900");
-      lblNewLabel.setForeground(Color.PINK);
-      lblNewLabel.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 40));
-      lblNewLabel.setBounds(178, 85, 227, 46);
-      TestmPane.add(lblNewLabel);
-      
-      Button button = new Button("\uC2DC\uD5D81");
+      Button button = new Button("Unit Test");
+      button.setFont(new Font("Dialog", Font.BOLD, 15));
+      button.setForeground(new Color(139, 0, 0));
       button.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
             Main.playSound(1.0f, false);
@@ -50,10 +47,12 @@ public class TestM extends JFrame {
          }
       });
       button.setBackground(Color.WHITE);
-      button.setBounds(232, 162, 87, 25);
+      button.setBounds(418, 140, 108, 25);
       TestmPane.add(button);
       
-      Button button_1 = new Button("\uC2DC\uD5D82");
+      Button button_1 = new Button("Wrong Test");
+      button_1.setFont(new Font("Dialog", Font.BOLD, 15));
+      button_1.setForeground(new Color(139, 0, 0));
       button_1.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
             Main.playSound(1.0f, false);
@@ -63,10 +62,12 @@ public class TestM extends JFrame {
          }
       });
       button_1.setBackground(Color.WHITE);
-      button_1.setBounds(232, 193, 87, 25);
+      button_1.setBounds(418, 194, 108, 25);
       TestmPane.add(button_1);
       
       Button button_2 = new Button("Main Menu");
+      button_2.setFont(new Font("Dialog", Font.BOLD, 15));
+      button_2.setForeground(new Color(139, 0, 0));
       button_2.setBackground(Color.WHITE);
       button_2.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
@@ -75,8 +76,19 @@ public class TestM extends JFrame {
             Menu.menu_f.setVisible(true);
          }
       });
-      button_2.setBounds(232, 256, 87, 25);
+      button_2.setBounds(418, 248, 108, 25);
       TestmPane.add(button_2);
+      
+      JLabel label = new JLabel("TOEIC 900");
+      label.setForeground(new Color(139, 0, 0));
+      label.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 50));
+      label.setBounds(25, 36, 276, 91);
+      TestmPane.add(label);
+      
+      JLabel lblNewLabel = new JLabel("New label");
+      lblNewLabel.setIcon(new ImageIcon("C:\\Users\\rkdal\\Desktop\\\uBC30\uACBD2.jpg"));
+      lblNewLabel.setBounds(0, 0, 595, 364);
+      TestmPane.add(lblNewLabel);
    }
 
 }
