@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class AdvanceReq {
    static final String id = "root";
-   static final String pass = "1234";
+   static final String pass = "root";
    String url = "jdbc:mysql://127.0.0.1:3306/java?serverTimezone=UTC";
    
    AdvanceReq(){

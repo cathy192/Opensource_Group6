@@ -60,6 +60,8 @@ public class LogM extends JFrame {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Main.playSound(1.0f, false);
+				logm_f.setVisible(false);
+				RankingGraph.rank1_f.setVisible(true);
 			}
 		});
 		button_1.setBackground(Color.WHITE);
